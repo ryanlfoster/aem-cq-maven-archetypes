@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archetype-descriptor
+    xsi:schemaLocation="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0 http://maven.apache.org/xsd/archetype-descriptor-1.0.0.xsd"
+    name="simple-mobile-app-archetype"
+    xmlns="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    partial="true">
+
+    <requiredProperties>
+        <!--
+           This is the name which will be set as the artifact name and used to derive the bundle
+           and package names.
+        -->
+        <requiredProperty key="artifactName" />
+            <!--
+               This is the group identifier for the package. Used with the
+               Package Manager and Package Share.
+            -->
+        <requiredProperty key="packageGroup" />
+        <!--
+           This is the folder under /apps into which the bundle and package content will be installed.
+        -->
+        <requiredProperty key="appsFolderName" />
+        <!-- 
+           This is the CQ version which this package is targeting.
+         -->
+        <requiredProperty key="cqVersion">
+            <defaultValue>5.6.1</defaultValue>
+        </requiredProperty>
+    </requiredProperties>
+
+
+    <fileSets>
+      <fileSet filtered="true" encoding="UTF-8">
+	<directory>content/src/main/content/jcr_root</directory>
+	<includes>
+	  <include>**/*</include>
+	</includes>
+      </fileSet>
+    </fileSets>
+
+</archetype-descriptor>
